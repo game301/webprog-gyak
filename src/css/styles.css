@@ -37,7 +37,7 @@ ul {
 
 header {
     position: relative;
-    background-image: url(~/src/img/mt-header-background.jpg);
+    background-image: url(../img/mt-header-background.jpg);
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: calc(20%);
