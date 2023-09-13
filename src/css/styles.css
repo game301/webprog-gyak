@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Love+Light&family=Noto+Music&family=Noto+Sans+Anatolian+Hieroglyphs&family=Rubik+Marker+Hatch&family=Train+One&display=swap");
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mt-background-container {
+    display: flex;
+    justify-content: center;
+}
+
+#mt-background-container > img {
+    margin: 0 3rem;
+    padding: 0 2rem;
+}
+
+header {
+    position: relative;
+    background-image: url(/src/img/mt-header-background.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: calc(20%);
+}
+
+header > h1 {
+    font-family: "Love Light";
+    font-size: 5rem;
+    text-align: center;
+    margin: 0;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+header li {
+    margin-inline: 2rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 0.6rem;
+    /*cursor: pointer;*/
+    background-color: hsla(0, 0%, 0%, 20%);
+    color: hsl(0, 0%, 0%);
+}
+
+header li:hover {
+    transition: ease-in-out;
+    background-color: black;
+    color: aliceblue;
+}
+
+main {
+    background-color: red;
+}
+
+h2 {
+    font-family: "Train One";
+    padding-top: 1rem;
+    padding-inline: 1rem;
+}
+
+p {
+    font-family: "Rubik Marker Hatch";
+    padding-inline: 1rem;
+}
