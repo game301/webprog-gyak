@@ -1,12 +1,9 @@
-const navBtn = document.querySelectorAll("[data-navLink]")
-console.log(navBtn)
+let container = document.querySelector("#mt-background-container")
 
-console.log(navBtn[0].dataset.navLink)
+let leftArrow = window.getComputedStyle(container, ":before")
+//alert(leftArrow.getPropertyValue("background"))
+console.log(leftArrow.x)
 
-navBtn.forEach((element) => {
-    element.addEventListener("click", () => {
-        if (navBtn[0].dataset.navLink == 1) {
-            alert("kys")
-        }
-    })
+document.addEventListener("click", () => {
+    leftArrow.x == leftArrow.x + 300
 })

@@ -25,16 +25,6 @@ ul {
     padding: 0;
 }
 
-#mt-background-container {
-    display: flex;
-    justify-content: center;
-}
-
-#mt-background-container > img {
-    margin: 0 3rem;
-    padding: 0 2rem;
-}
-
 header {
     position: relative;
     background-image: url(./../../src/img/mt-header-background.jpg);
@@ -48,6 +38,7 @@ header > h1 {
     font-size: 5rem;
     text-align: center;
     margin: 0;
+    padding-top: 1rem;
 }
 
 header ul {
@@ -65,16 +56,71 @@ header li {
     /*cursor: pointer;*/
     background-color: hsla(0, 0%, 0%, 20%);
     color: hsl(0, 0%, 0%);
+    transition: 250ms ease-in-out;
 }
 
 header li:hover {
-    transition: ease-in-out;
     background-color: black;
     color: aliceblue;
 }
 
+header nav a {
+    margin-bottom: 1rem;
+}
+
 main {
     background-color: red;
+}
+
+#mt-background-container {
+    position: relative;
+    display: flex;
+    /*justify-content: center;*/
+    /*flex-wrap: wrap;*/
+    overflow-x: hidden;
+    padding-block: 1rem;
+}
+
+#mt-background-container::before {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    font-family: "Font Awesome 5 Free";
+    content: "\f060";
+    display: inline-block;
+    font-weight: 900;
+    font-size: 5rem;
+    color: hsla(0, 0%, 35%, 70%);
+    z-index: 1;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+#mt-background-container::after {
+    position: absolute;
+    right: 0;
+    font-family: "Font Awesome 5 Free";
+    content: "\f061";
+    display: inline-block;
+    font-weight: 900;
+    top: 30%;
+    font-size: 5rem;
+    color: hsla(0, 0%, 35%, 70%);
+    z-index: 1;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+}
+
+#mt-background-container:hover::before,
+#mt-background-container:hover::after {
+    color: hsla(0, 0%, 60%, 90%);
+}
+
+#mt-background-container > img {
+    margin: 0 1rem;
+    /*padding: 0 1rem;*/
+    width: 150px;
+    border-radius: 1.5rem;
 }
 
 h2 {
