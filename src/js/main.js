@@ -2,9 +2,14 @@
 import { timeline } from "./animation.js"
 //console.log(timeline)
 
-document.addEventListener("click", () => {
-    const darkModeButton = document.querySelector("#nav-dark-mode-toggle")
+const darkModeButton = document.querySelector("#nav-dark-mode-toggle")
+
+darkModeButton.addEventListener("click", () => {
     console.log(darkModeButton)
     darkModeButton.firstElementChild.classList.toggle("fa-sun")
     darkModeButton.firstElementChild.classList.toggle("fa-moon")
 })
+
+window.onload = () => {
+    window.scrollTo(0, 0)
+}

@@ -81,11 +81,12 @@ ul {
 
 /* --- Header --- */
 header {
-    position: fixed;
     z-index: 1;
     /*border-bottom: 3px solid black;*/
     background-color: rgb(10, 12, 16);
-    width: 100vw;
+    width: 100%;
+    position: sticky;
+    top: 0;
 }
 
 header #nav-container {
@@ -137,25 +138,32 @@ header #nav-container {
     margin-left: auto;
 }
 
+iframe {
+    display: block;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    z-index: -1;
+    position: relative;
+    top: -85px;
+    margin-bottom: -85px;
+}
+
 /* --- Main --- */
 main {
     background: var(--dark-mode-bg-color);
 }
 
-main > iframe {
-    /* lehet be lehetne dobni ezt a main-heading section-be absolute nélkül egy z-index: -1 / background video-ként és nem lenne vele ennyi resize/responsive gond? */
-    position: absolute;
-    aspect-ratio: 16 / 9;
-    width: 100vw;
-}
-
 main > #main-heading {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    /*top: 40vh;
+    left: 27vw;*/
+    width: 100vw;
+    height: 100vh;
+    top: 0;
 }
 
 main > #main-heading > h1 {
@@ -166,6 +174,7 @@ main > #main-heading > h1 {
     text-align: center;
     margin: 0;
     padding-top: 3rem;
+    text-wrap: nowrap;
 }
 
 main > #main-heading > p {
@@ -176,6 +185,7 @@ main > #main-heading > p {
     text-align: center;
     margin: 0;
     padding-top: 1rem;
+    text-wrap: nowrap;
 }
 
 main > #main-heading > button {
@@ -195,7 +205,7 @@ main > #main-heading > button {
 main > #main-heading > button:hover {
     background-color: hsl(0, 0%, 4%);
 }
-
+/*
 #mt-background-container {
     position: relative;
     display: flex;
@@ -261,17 +271,26 @@ main > #main-heading > button:hover {
 }
 
 #mt-background-container > a > img:hover {
-    /*opacity: 50%;*/
+    
     scale: 1.1;
 }
+*/
 
 #main-anime-container {
-    /* rengeteg gond lesz itt a reszponzív 16 / 9 position absolute videó elhelyezésével */
-    margin-top: 20vh;
+    padding-top: 2rem;
 }
 
 section h2 {
-    color: white;
+    margin: 0 2rem 2rem 2rem;
+    color: var(--dark-mode-text-color);
+}
+
+section p {
+    margin: 2rem;
+    color: var(--dark-mode-text-color-hover);
+    line-height: 4rem;
+    text-wrap: wrap;
+    line-break: calc(1rem + 1ch);
 }
 
 #main-article-container {
