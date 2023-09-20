@@ -4,10 +4,29 @@
 *::after {
     box-sizing: border-box;
 }
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
     font-family: sans-serif;
+    background-image: linear-gradient(
+        105deg,
+        hsl(120deg 5% 4%) 0%,
+        hsl(120deg 7% 5%) 4%,
+        hsl(90deg 6% 7%) 11%,
+        hsl(60deg 5% 9%) 20%,
+        hsl(90deg 4% 11%) 30%,
+        hsl(60deg 3% 12%) 43%,
+        hsl(40deg 4% 14%) 55%,
+        hsl(30deg 3% 16%) 68%,
+        hsl(30deg 2% 17%) 80%,
+        hsl(20deg 3% 19%) 89%,
+        hsl(0deg 2% 21%) 96%,
+        hsl(0deg 2% 22%) 100%
+    );
 }
 
 img {
@@ -26,64 +45,142 @@ ul {
 }
 
 header {
-    position: relative;
-    background-image: url(./../../src/img/mt-header-background.jpg);
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: calc(20%);
+    position: fixed;
+    z-index: 1;
+    /*border-bottom: 3px solid black;*/
+    background-color: rgb(10, 12, 16);
+    width: 100vw;
 }
 
-header > h1 {
+header #nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: nowrap;
+}
+
+#nav-container > #nav-logo {
+    /* ez majd egy img lesz, nem szöveg, csak még nincs kép szerkesztve*/
+    padding: 1.5rem;
+    transition: 1000ms ease-in-out;
+    margin-block: 0;
+    color: hsl(0, 0%, 80%);
+    text-wrap: nowrap;
+}
+
+#nav-logo:hover,
+#nav-logo:focus-visible {
+    transform: rotate(360deg);
+}
+
+#nav-container > a {
+    margin: 1.5rem;
+}
+
+#nav-container li {
+    padding: 0.6rem;
+    /*background-color: purple;*/
+    color: hsl(0, 0%, 80%);
+    transition: 250ms ease-in-out;
+    text-wrap: nowrap;
+    cursor: pointer;
+}
+
+#nav-container li:hover {
+    color: hsl(0, 0%, 40%);
+}
+
+#nav-container > div {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-inline: auto 2rem;
+}
+
+#nav-search {
+    margin-left: auto;
+}
+
+main {
+    background: rgb(23, 19, 109);
+    background: radial-gradient(
+        circle,
+        rgba(23, 19, 109, 1) 0%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    /*background-image: url(./../../src/img/mt-header-background.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: contain;*/
+}
+
+main > iframe {
+    /* lehet be lehetne dobni ezt a main-heading section-be absolute nélkül egy z-index: -1 / background video-ként és nem lenne vele ennyi resize/responsive gond? */
+    position: absolute;
+    aspect-ratio: 16 / 9;
+    width: 100vw;
+}
+
+main > #main-heading {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main > #main-heading > h1 {
     font-family: "Love Light";
     font-size: 5rem;
+    color: white;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    margin: 0;
+    padding-top: 3rem;
+}
+
+main > #main-heading > p {
+    font-family: "Love Light";
+    font-size: 3rem;
+    color: white;
+    text-shadow: 1px 1px black;
     text-align: center;
     margin: 0;
     padding-top: 1rem;
 }
 
-header ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-}
+main > #main-heading > button {
+    font-family: "Liu Jian Mao Cao";
+    font-size: 2em;
+    font-weight: bold;
 
-header li {
-    margin-inline: 2rem;
-    border: 1px solid black;
+    color: white;
+    background-color: hsl(0, 0%, 10%);
+    cursor: pointer;
     border-radius: 2rem;
-    padding: 0.6rem;
-    /*cursor: pointer;*/
-    background-color: hsla(0, 0%, 0%, 20%);
-    color: hsl(0, 0%, 0%);
-    transition: 250ms ease-in-out;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    border: 0;
+    transition: 1000ms ease-in-out;
 }
 
-header li:hover {
-    background-color: black;
-    color: aliceblue;
-}
-
-header nav a {
-    margin-bottom: 1rem;
-}
-
-main {
-    background-color: red;
+main > #main-heading > button:hover {
+    background-color: hsl(0, 0%, 4%);
 }
 
 #mt-background-container {
     position: relative;
     display: flex;
-    /*justify-content: center;*/
-    /*flex-wrap: wrap;*/
-    overflow-x: hidden;
     padding-block: 1rem;
+    scroll-behavior: smooth;
+    left: 0;
+    margin: 2rem;
 }
 
 #mt-background-container::before {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 0;
     font-family: "Font Awesome 5 Free";
     content: "\f060";
@@ -98,12 +195,12 @@ main {
 
 #mt-background-container::after {
     position: absolute;
+    top: 35%;
     right: 0;
     font-family: "Font Awesome 5 Free";
     content: "\f061";
     display: inline-block;
     font-weight: 900;
-    top: 30%;
     font-size: 5rem;
     color: hsla(0, 0%, 35%, 70%);
     z-index: 1;
@@ -116,20 +213,60 @@ main {
     color: hsla(0, 0%, 60%, 90%);
 }
 
-#mt-background-container > img {
-    margin: 0 1rem;
-    /*padding: 0 1rem;*/
-    width: 150px;
-    border-radius: 1.5rem;
+#mt-background-container:hover::before {
+    translate: 10px;
 }
 
-h2 {
+#mt-background-container:hover::after {
+    translate: -10px;
+}
+
+#mt-background-container > a {
+    margin: 0 1rem;
+    display: flex;
+    left: 0;
+}
+
+#mt-background-container > a > img {
+    max-width: 10rem;
+    border-radius: 1.5rem;
+    transition: 300ms ease-in-out;
+}
+
+#mt-background-container > a > img:hover {
+    /*opacity: 50%;*/
+    scale: 1.1;
+}
+
+#main-anime-container {
+    /* rengeteg gond lesz itt a reszponzív 16 / 9 position absolute videó elhelyezésével */
+    margin-top: 20vh;
+}
+
+section h2 {
+    color: white;
+}
+
+#main-article-container {
+    /*background-color: green;*/
+    display: flex;
+}
+
+#main-article-container > article {
+    border: 1px solid black;
+    text-align: center;
+    flex-grow: 1;
+}
+
+#main-article-container h3 {
     font-family: "Train One";
+    color: aqua;
     padding-top: 1rem;
     padding-inline: 1rem;
 }
 
-p {
+#main-article-container p {
     font-family: "Rubik Marker Hatch";
+    color: aliceblue;
     padding-inline: 1rem;
 }

@@ -3,8 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>1. gyakorlat</title>
+        <title>Mushoku Cult</title>
         <link rel="stylesheet" href="./src/css/styles.css" />
+        <link rel="shortcut icon" href="./src/img/favicon-roxy.jpg" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+            defer
+        ></script>
         <script type="module" src="./src/js/main.js"></script>
         <!--
         <link
@@ -12,59 +17,177 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
         -->
+
         <script
             src="https://kit.fontawesome.com/80ca49372d.js"
             crossorigin="anonymous"
         ></script>
     </head>
     <body>
-        <header>
-            <h1>Mushoku gaming</h1>
+        <header id="header">
             <nav>
-                <ul>
-                    <a href="/valami1"
-                        ><li class="nav-button" data-navLink="1">1. gomb</li></a
+                <ul id="nav-container">
+                    <a href="/" id="nav-logo">Mushoku Cult</a>
+                    <a href="./src/pages/story.html"
+                        ><li class="nav-button" data-navLink="1">Story</li></a
                     >
-                    <a href="/valami2"
-                        ><li class="nav-button" data-navLink="2">2. gomb</li></a
+                    <a href="./src/pages/characters.html"
+                        ><li class="nav-button" data-navLink="2">
+                            Characters
+                        </li></a
                     >
-                    <a href="/valami3"
-                        ><li class="nav-button" data-navLink="3">3. gomb</li></a
+                    <a href="./src/pages/power-systems.html"
+                        ><li class="nav-button" data-navLink="3">
+                            Power Systems
+                        </li></a
                     >
-                    <a href="/valami4"
-                        ><li class="nav-button" data-navLink="4">4. gomb</li></a
+                    <a href="./src/pages/world.html"
+                        ><li class="nav-button" data-navLink="4">
+                            The Six-faced World
+                        </li></a
                     >
+                    <a href="./src/pages/toplist.html"
+                        ><li class="nav-button" data-navLink="5">
+                            The Seven Great World Powers
+                        </li></a
+                    >
+                    <a href="./src/pages/about.html"
+                        ><li class="nav-button" data-navLink="6">
+                            About Mushoku Cult
+                        </li></a
+                    >
+                    <div>
+                        <li>
+                            <i
+                                class="fa-solid fa-magnifying-glass"
+                                id="nav-search"
+                            ></i>
+                        </li>
+                        <!-- <li><i class="fa-brands fa-twitter"></i></li> -->
+                        <li><i class="fa-solid fa-moon"></i></li>
+                        <li><i class="fa-solid fa-key"></i></li>
+                    </div>
                 </ul>
             </nav>
         </header>
         <main>
+            <!-- Az iframe-et belerakhatnám egy section-be, de idk-->
+            <iframe
+                src="https://www.youtube.com/embed/xZ-h-YSBaqc?&list=PL3SsHdcMzCJDI3JFjJnMThL_c7iBAss8w&index=1;?&loop=1;&autoplay=1;&mute=1;&controls=0;?si=oQOOZA9_9wgRblha&amp;"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+            ></iframe>
+
+            <section id="main-heading">
+                <h1>Mushoku Cult</h1>
+                <p>A hely, ahol te is Rudeus vallásának tagja lehetsz!</p>
+                <button>Csatlakozás</button>
+            </section>
+
+            <!-- 
             <section id="mt-background-container">
-                <img src="./src/img/light-novel-volume-1-cover.webp" alt="" />
-                <img src="./src/img/light-novel-volume-2-cover.webp" alt="" />
-                <img src="./src/img/light-novel-volume-3-cover.webp" alt="" />
-                <img src="./src/img/light-novel-volume-4-cover.webp" alt="" />
-                <img src="./src/img/light-novel-volume-5-cover.webp" alt="" />
-                <img src="./src/img/light-novel-volume-6-cover.webp" alt="" />
-                <img src="./src/img/light-novel-volume-7-cover.webp" alt="" />
-                <img src="./src/img/light-novel-volume-8-cover.webp" alt="" />
-                <img src="./src/img/light-novel-volume-9-cover.webp" alt="" />
+                <h2>Light Novel</h2>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_1"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-1-cover.webp"
+                        alt=""
+                /></a>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_2"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-2-cover.webp"
+                        alt=""
+                /></a>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_3"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-3-cover.webp"
+                        alt=""
+                /></a>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_4"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-4-cover.webp"
+                        alt=""
+                /></a>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_5"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-5-cover.webp"
+                        alt=""
+                /></a>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_6"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-6-cover.webp"
+                        alt=""
+                /></a>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_7"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-7-cover.webp"
+                        alt=""
+                /></a>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_8"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-8-cover.webp"
+                        alt=""
+                /></a>
+                <a
+                    href="https://mushokutensei.fandom.com/wiki/Light_Novel_Volume_9"
+                    target="_blank"
+                    rel="noopener"
+                    ><img
+                        src="./src/img/light-novel-volume-9-cover.webp"
+                        alt=""
+                /></a>
+            </section>
+            -->
+
+            <section id="main-anime-container">
+                <h2>Anime</h2>
             </section>
 
             <section>
-                <article>
-                    <h2>"Rudeus is gae?"</h2>
+                <h2>Manga</h2>
+            </section>
+
+            <section>
+                <h2>Web Novel</h2>
+            </section>
+
+            <section id="main-article-container">
+                <h2>Fun Facts</h2>
+                <article class="main-article">
+                    <h3>"Rudeus is gae?"</h3>
                     <p>Hint: Yessir!</p>
                 </article>
-            </section>
-            <section>
-                <article>
-                    <h2>"Who is better? Dad or SolDad?"</h2>
+                <article class="main-article">
+                    <h3>"Who is better? Dad or SolDad?"</h3>
                     <p>Hint: Paul Daddy is best boy!</p>
                 </article>
-            </section>
-            <section>
-                <article>
-                    <h2>"Who is the best girl of MT"</h2>
+                <article class="main-article">
+                    <h3>"Who is the best girl of MT"</h3>
                     <p>Hint: Orsted</p>
                     <p>Honorable Mention: Kishirika-sama</p>
                 </article>
