@@ -183,15 +183,6 @@ ul {
     margin-left: auto;
 }
 
-iframe {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    z-index: -1;
-    position: relative;
-    top: -85px;
-    margin-bottom: -85px;
-}
-
 /* --- Main --- */
 main {
     background: var(--dark-mode-bg-color);
@@ -341,11 +332,6 @@ main {
     /* itt egy jól kinéző mobile navbar a cél */
 
     /* Navbar áthelyezése miatt vissza kell állítani a negatív margin-okat*/
-
-    iframe {
-        top: 0;
-        margin-bottom: 0;
-    }
 
     #landing-page-container {
         margin-top: 0;
