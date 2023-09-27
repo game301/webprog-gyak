@@ -2,6 +2,10 @@
 import { timeline } from "./animation.js"
 //console.log(timeline)
 
+window.onload = () => {
+    window.scrollTo(0, 0)
+}
+
 const darkModeButton = document.querySelector("#nav-dark-mode-toggle")
 
 darkModeButton.addEventListener("click", () => {
@@ -10,6 +14,10 @@ darkModeButton.addEventListener("click", () => {
     darkModeButton.firstElementChild.classList.toggle("fa-moon")
 })
 
-window.onload = () => {
-    window.scrollTo(0, 0)
-}
+const hamburgerMenuButton = document.querySelector("#nav-hamburger-menu-toggle")
+
+hamburgerMenuButton.addEventListener("click", () => {
+    console.log(hamburgerMenuButton)
+    hamburgerMenuButton.firstElementChild.classList.toggle("fa-bars")
+    hamburgerMenuButton.firstElementChild.classList.toggle("fa-xmark")
+})

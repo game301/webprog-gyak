@@ -6,9 +6,17 @@
 *::after {
     box-sizing: border-box;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
 html {
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     scroll-behavior: smooth;
+    color-scheme: dark light;
 }
 
 :root {
@@ -25,35 +33,40 @@ html {
     );
 
     --dark-mode-text-color: hsl(0, 0%, 100%);
-    --dark-mode-text-color-hover: hsl(0, 0%, 60%);
+    --dark-mode-text-color-hover: hsl(0, 0%, 40%);
+
+    --dark-mode-navbar-bg-color: hsla(220, 23%, 5%, 0.8);
 }
 
 body {
-    margin: 0;
-    font-family: sans-serif;
+    font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue";
 }
 
-img {
-    display: inline-block;
+img,
+video,
+iframe,
+picture,
+svg {
+    display: block;
     max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+    font: inherit;
 }
 
 a {
     text-decoration: none;
+    display: block;
 }
 
 ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* --- Fontawesome styles --- */
-.fa-sun {
-    width: 1rem;
-}
-.fa-moon {
-    width: 1rem;
 }
 
 /* --- Scrollbar --- */
@@ -80,29 +93,38 @@ ul {
 }
 
 /* --- Header --- */
-header {
-    z-index: 1;
-    /*border-bottom: 3px solid black;*/
-    background-color: rgb(10, 12, 16);
+#primary-header {
     width: 100%;
     position: sticky;
     top: 0;
+    z-index: 10000;
 }
 
-header #nav-container {
+#primary-nav {
+    background-color: var(--dark-mode-navbar-bg-color);
     display: flex;
     align-items: center;
     justify-content: start;
-    flex-wrap: nowrap;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
-#nav-container > #nav-logo {
+#nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#nav-logo {
     /* ez majd egy img lesz, nem szöveg, csak még nincs kép szerkesztve*/
-    padding: 1.5rem;
+    width: clamp(1rem, 10vw + 3rem, 6rem);
+
+    margin: max(1vw, 0.8vw + 0.1rem);
+
+    text-align: center;
+    text-wrap: balance;
+
     transition: 1000ms ease-in-out;
-    margin-block: 0;
-    color: hsl(0, 0%, 80%);
-    text-wrap: nowrap;
 }
 
 #nav-logo:hover,
@@ -110,36 +132,58 @@ header #nav-container {
     transform: rotate(360deg);
 }
 
-#nav-container > a {
-    margin: 1.5rem;
+#nav-container > li {
+    margin: max(1.5vw, 1vw + 0.2rem);
+    margin-inline: max(3vw, 1vw + 0.5rem);
+    text-align: center;
+    text-wrap: balance;
+    width: fit-content;
 }
 
-#nav-container li {
-    padding: 0.6rem;
-    /*background-color: purple;*/
+#nav-container li > a {
     color: var(--dark-mode-text-color);
+    font-size: clamp(0.2rem, 1vw + 0.5rem, 1rem);
+
+    padding: 0.3rem;
+
     transition: 250ms ease-in-out;
-    text-wrap: nowrap;
-    cursor: pointer;
 }
 
-#nav-container li:hover {
+#nav-container a:hover {
     color: var(--dark-mode-text-color-hover);
 }
 
-#nav-container > div {
+#nav-icon-container {
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-inline: auto 2rem;
+    font-size: clamp(0.2rem, 1vw + 0.5rem, 1rem);
+    /*padding-right: 2rem;*/
+    margin-right: max(1.5vw, 1vw + 0.1rem);
+    margin-left: auto;
+    color: var(--dark-mode-text-color);
 }
 
-#nav-search {
+#nav-icon-container li {
+    padding-inline: 0.5rem;
+    cursor: pointer;
+}
+/*
+#nav-icon-container:first-child {
+    margin-left: auto;
+}*/
+
+#nav-dark-mode-toggle > i {
+    width: min(1rem, 1vw + 0.2rem);
+}
+
+#nav-hamburger-menu-toggle > i {
+    display: none;
+    width: min(1rem, 1vw + 0.2rem);
     margin-left: auto;
 }
 
 iframe {
-    display: block;
     aspect-ratio: 16 / 9;
     width: 100%;
     z-index: -1;
@@ -153,56 +197,56 @@ main {
     background: var(--dark-mode-bg-color);
 }
 
-main > #main-heading {
+#landing-page-container {
+    position: relative;
+    margin-top: -85px;
+}
+
+#main-heading {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    z-index: 1;
     position: absolute;
-    /*top: 40vh;
-    left: 27vw;*/
-    width: 100vw;
-    height: 100vh;
-    top: 0;
+    inset: 0;
 }
 
-main > #main-heading > h1 {
+#main-heading > h1 {
     font-family: "Love Light";
-    font-size: 5rem;
+    font-size: clamp(0.5rem, 3vw + 1rem, 4rem);
     color: var(--dark-mode-text-color);
     text-shadow: 2px 2px black;
     text-align: center;
-    margin: 0;
-    padding-top: 3rem;
     text-wrap: nowrap;
 }
 
-main > #main-heading > p {
+#main-heading > p {
     font-family: "Love Light";
-    font-size: 3rem;
+    font-size: clamp(0.3rem, 2vw + 0.8rem, 3rem);
     color: var(--dark-mode-text-color);
     text-shadow: 1px 1px black;
     text-align: center;
-    margin: 0;
-    padding-top: 1rem;
     text-wrap: nowrap;
 }
 
-main > #main-heading > button {
+#main-heading > button {
     font-family: "Liu Jian Mao Cao";
-    font-size: 2em;
+    font-size: clamp(0.3em, 1vw + 1em, 2em);
     font-weight: bold;
     color: var(--dark-mode-text-color);
     background-color: hsla(0, 0%, 10%, 40%);
+
+    padding: max(0.8vw, 0.6vw + 0.3em);
+    border: 0;
+
     cursor: pointer;
     border-radius: 2rem;
-    margin-top: 1rem;
-    padding: 1.2rem;
-    border: 0;
-    transition: 1000ms ease-in-out;
+    transition: 500ms ease-in-out;
 }
 
-main > #main-heading > button:hover {
+#main-heading > button:hover {
     background-color: hsl(0, 0%, 4%);
 }
 /*
@@ -276,43 +320,34 @@ main > #main-heading > button:hover {
 }
 */
 
-#main-anime-container {
-    padding-top: 2rem;
-}
+@media screen and (max-width: 950px) /*and (orientation: portrait) */ {
+    #primary-header {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+    }
+    #nav-logo {
+        display: none;
+    }
 
-section h2 {
-    margin: 0 2rem 2rem 2rem;
-    color: var(--dark-mode-text-color);
-}
+    #nav-container li {
+        display: none;
+    }
 
-section p {
-    margin: 2rem;
-    color: var(--dark-mode-text-color-hover);
-    line-height: 4rem;
-    text-wrap: wrap;
-    line-break: calc(1rem + 1ch);
-}
+    #nav-hamburger-menu-toggle > i {
+        display: block;
+    }
 
-#main-article-container {
-    /*background-color: green;*/
-    display: flex;
-}
+    /* itt egy jól kinéző mobile navbar a cél */
 
-#main-article-container > article {
-    border: 1px solid black;
-    text-align: center;
-    flex-grow: 1;
-}
+    /* Navbar áthelyezése miatt vissza kell állítani a negatív margin-okat*/
 
-#main-article-container h3 {
-    font-family: "Train One";
-    color: aqua;
-    padding-top: 1rem;
-    padding-inline: 1rem;
-}
+    iframe {
+        top: 0;
+        margin-bottom: 0;
+    }
 
-#main-article-container p {
-    font-family: "Rubik Marker Hatch";
-    color: aliceblue;
-    padding-inline: 1rem;
+    #landing-page-container {
+        margin-top: 0;
+    }
 }

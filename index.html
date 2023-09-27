@@ -24,69 +24,92 @@
         ></script>
     </head>
     <body>
-        <header id="header">
-            <nav>
+        <header id="primary-header">
+            <nav id="primary-nav">
+                <div id="nav-logo">
+                    <a href="#">
+                        <img src="./src/img/logo.png" alt="Mushoku Tensei logo"
+                    /></a>
+                </div>
+
                 <ul id="nav-container">
-                    <a href="/" id="nav-logo">Mushoku Cult</a>
-                    <a href="./src/pages/story.html"
-                        ><li class="nav-button" data-navLink="1">Story</li></a
-                    >
-                    <a href="./src/pages/characters.html"
-                        ><li class="nav-button" data-navLink="2">
-                            Characters
-                        </li></a
-                    >
-                    <a href="./src/pages/power-systems.html"
-                        ><li class="nav-button" data-navLink="3">
-                            Power Systems
-                        </li></a
-                    >
-                    <a href="./src/pages/world.html"
-                        ><li class="nav-button" data-navLink="4">
-                            The Six-faced World
-                        </li></a
-                    >
-                    <a href="./src/pages/toplist.html"
-                        ><li class="nav-button" data-navLink="5">
-                            The Seven Great World Powers
-                        </li></a
-                    >
-                    <a href="./src/pages/about.html"
-                        ><li class="nav-button" data-navLink="6">
-                            About Mushoku Cult
-                        </li></a
-                    >
-                    <div>
-                        <li id="nav-search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </li>
-                        <!-- <li><i class="fa-brands fa-twitter"></i></li> -->
-                        <!-- <li><i class="fa-brands fa-github"></i></li> -->
-                        <!-- <li><i class="fa-brands fa-discord"></i></li> -->
-                        <li id="nav-dark-mode-toggle">
-                            <i class="fa-solid fa-sun"></i>
-                        </li>
-                        <!-- itt majd kell egy account ikon-->
-                        <li id="nav-login"><i class="fa-solid fa-key"></i></li>
-                    </div>
+                    <li>
+                        <a href="./src/pages/cult.html" class="nav-button"
+                            >Cult</a
+                        >
+                    </li>
+
+                    <li>
+                        <a href="./src/pages/story.html" class="nav-button"
+                            >Anime Cut Content</a
+                        >
+                    </li>
+
+                    <li>
+                        <a href="./src/pages/random.html" class="nav-button"
+                            >Random tartalom</a
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            href="https://mushokutensei.fandom.com/wiki/Mushoku_Tensei_Wiki"
+                            target="_blank"
+                            rel="noopener"
+                            class="nav-button"
+                            >Wiki</a
+                        >
+                    </li>
+                    <li>
+                        <a href="./src/pages/about.html" class="nav-button"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a href="./src/pages/bug.html" class="nav-button"
+                            >Hibajelentés</a
+                        >
+                    </li>
                 </ul>
+
+                <ul id="nav-icon-container">
+                    <li id="nav-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </li>
+                    <!-- <li><i class="fa-brands fa-twitter"></i></li> -->
+                    <!-- <li><i class="fa-brands fa-github"></i></li> -->
+                    <!-- <li><i class="fa-brands fa-discord"></i></li> -->
+                    <li id="nav-dark-mode-toggle">
+                        <i class="fa-solid fa-sun"></i>
+                    </li>
+                    <!-- itt majd kell egy account ikon-->
+                    <li id="nav-login">
+                        <i class="fa-solid fa-key"></i>
+                    </li>
+                </ul>
+
+                <div id="nav-hamburger-menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </nav>
         </header>
-        <iframe
-            src="https://www.youtube.com/embed/xZ-h-YSBaqc?&list=PL3SsHdcMzCJDI3JFjJnMThL_c7iBAss8w&index=1;si=oQOOZA9_9wgRblha&amp;&loop=1;&autoplay=1;&mute=1;&controls=0;"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        ></iframe>
 
-        <main>
-            <section id="main-heading">
+        <div id="landing-page-container">
+            <div id="main-heading">
                 <h1>Mushoku Cult</h1>
                 <p>A hely, ahol te is Rudeus vallásának tagja lehetsz!</p>
-                <button>Csatlakozás</button>
-            </section>
+                <button type="button">Csatlakozás</button>
+            </div>
+            <iframe
+                src="https://www.youtube.com/embed/xZ-h-YSBaqc?&list=PL3SsHdcMzCJDI3JFjJnMThL_c7iBAss8w&index=1;si=oQOOZA9_9wgRblha&amp;&loop=1;&autoplay=1;&mute=1;&controls=0;"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+        </div>
 
-            <!-- 
+        <main>
+            <!--
             <section id="mt-background-container">
                 <h2>Light Novel</h2>
                 <a
@@ -175,167 +198,11 @@
             <section>
                 <h2>Web Novel</h2>
             </section>
-
-            <section id="main-article-container">
-                <h2>Fun Facts</h2>
-                <article class="main-article">
-                    <h3>"Rudeus is gae?"</h3>
-                    <p>Hint: Yessir!</p>
-                </article>
-                <article class="main-article">
-                    <h3>"Who is better? Dad or SolDad?"</h3>
-                    <p>Hint: Paul Daddy is best boy!</p>
-                </article>
-                <article class="main-article">
-                    <h3>"Who is the best girl of MT"</h3>
-                    <p>Hint: Orsted</p>
-                    <p>Honorable Mention: Kishirika-sama</p>
-                </article>
-            </section>
-
-            <section>
-                <h2>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Doloribus itaque blanditiis qui laborum libero. Maxime
-                    impedit quae repellendus adipisci. Hic?
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Molestias, eius velit quidem recusandae natus nobis
-                    temporibus delectus eos illum tempore vitae modi animi
-                    assumenda error sit labore incidunt ab repellat. Adipisci
-                    quis ab neque illum iusto fuga vitae deserunt aliquid
-                    pariatur, distinctio dolorum officia atque. Sapiente
-                    recusandae neque, deserunt odit ipsa fugiat fugit. Eaque,
-                    doloribus. Reiciendis, adipisci! Modi, iusto rerum delectus
-                    quaerat quasi aliquid provident asperiores corporis quidem
-                    cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae. quis ab neque illum iusto fuga vitae
-                    deserunt aliquid pariatur, distinctio dolorum officia atque.
-                    Sapiente recusandae neque, deserunt odit ipsa fugiat fugit.
-                    Eaque, doloribus. Reiciendis, adipisci! Modi, iusto rerum
-                    delectus quaerat quasi aliquid provident asperiores corporis
-                    quidem cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae. quis ab neque illum iusto fuga vitae
-                    deserunt aliquid pariatur, distinctio dolorum officia atque.
-                    Sapiente recusandae neque, deserunt odit ipsa fugiat fugit.
-                    Eaque, doloribus. Reiciendis, adipisci! Modi, iusto rerum
-                    delectus quaerat quasi aliquid provident asperiores corporis
-                    quidem cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae. quis ab neque illum iusto fuga vitae
-                    deserunt aliquid pariatur, distinctio dolorum officia atque.
-                    Sapiente recusandae neque, deserunt odit ipsa fugiat fugit.
-                    Eaque, doloribus. Reiciendis, adipisci! Modi, iusto rerum
-                    delectus quaerat quasi aliquid provident asperiores corporis
-                    quidem cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae.
-                </p>
-            </section>
-            <section>
-                <h2>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Doloribus itaque blanditiis qui laborum libero. Maxime
-                    impedit quae repellendus adipisci. Hic?
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Molestias, eius velit quidem recusandae natus nobis
-                    temporibus delectus eos illum tempore vitae modi animi
-                    assumenda error sit labore incidunt ab repellat. Adipisci
-                    quis ab neque illum iusto fuga vitae deserunt aliquid
-                    pariatur, distinctio dolorum officia atque. Sapiente
-                    recusandae neque, deserunt odit ipsa fugiat fugit. Eaque,
-                    doloribus. Reiciendis, adipisci! Modi, iusto rerum delectus
-                    quaerat quasi aliquid provident asperiores corporis quidem
-                    cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae. quis ab neque illum iusto fuga vitae
-                    deserunt aliquid pariatur, distinctio dolorum officia atque.
-                    Sapiente recusandae neque, deserunt odit ipsa fugiat fugit.
-                    Eaque, doloribus. Reiciendis, adipisci! Modi, iusto rerum
-                    delectus quaerat quasi aliquid provident asperiores corporis
-                    quidem cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae. quis ab neque illum iusto fuga vitae
-                    deserunt aliquid pariatur, distinctio dolorum officia atque.
-                    Sapiente recusandae neque, deserunt odit ipsa fugiat fugit.
-                    Eaque, doloribus. Reiciendis, adipisci! Modi, iusto rerum
-                    delectus quaerat quasi aliquid provident asperiores corporis
-                    quidem cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae. quis ab neque illum iusto fuga vitae
-                    deserunt aliquid pariatur, distinctio dolorum officia atque.
-                    Sapiente recusandae neque, deserunt odit ipsa fugiat fugit.
-                    Eaque, doloribus. Reiciendis, adipisci! Modi, iusto rerum
-                    delectus quaerat quasi aliquid provident asperiores corporis
-                    quidem cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae.
-                </p>
-            </section>
-
-            <section>
-                <h2>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Doloribus itaque blanditiis qui laborum libero. Maxime
-                    impedit quae repellendus adipisci. Hic?
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Molestias, eius velit quidem recusandae natus nobis
-                    temporibus delectus eos illum tempore vitae modi animi
-                    assumenda error sit labore incidunt ab repellat. Adipisci
-                    quis ab neque illum iusto fuga vitae deserunt aliquid
-                    pariatur, distinctio dolorum officia atque. Sapiente
-                    recusandae neque, deserunt odit ipsa fugiat fugit. Eaque,
-                    doloribus. Reiciendis, adipisci! Modi, iusto rerum delectus
-                    quaerat quasi aliquid provident asperiores corporis quidem
-                    cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolor quis ab
-                    neque illum iusto fuga vitae deserunt aliquid pariatur,
-                    distinctio dolorum officia atque. Sapiente recusandae neque,
-                    deserunt odit ipsa fugiat fugit. Eaque, doloribus.
-                    Reiciendis, adipisci! Modi, iusto rerum delectus quaerat
-                    quasi aliquid provident asperiores corporis quidem cumque
-                    repellat unde architecto blanditiis quisquam distinctio
-                    aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae. quis ab neque illum iusto fuga vitae
-                    deserunt aliquid pariatur, distinctio dolorum officia atque.
-                    Sapiente recusandae neque, deserunt odit ipsa fugiat fugit.
-                    Eaque, doloribus. Reiciendis, adipisci! Modi, iusto rerum
-                    delectus quaerat quasi aliquid provident asperiores corporis
-                    quidem cumque repellat unde architecto blanditiis quisquam
-                    distinctio aliquam. Debitis minus totam vitae dolorem libero
-                    repudiandae sint vel. Aut suscipit facere delectus
-                    recusandae distinctio, sequi qui optio? Deleniti fuga sed
-                    voluptatibus aut quae.em libero repudiandae sint vel. Aut
-                    suscipit facere delectus recusandae distinctio, sequi qui
-                    optio? Deleniti fuga sed voluptatibus aut quae.
-                </p>
-            </section>
         </main>
-        <footer></footer>
+
+        <footer>
+            <p>elérhetőségek</p>
+            <p>Minden jog fenntartva</p>
+        </footer>
     </body>
 </html>
