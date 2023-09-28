@@ -467,6 +467,7 @@ main {
     }
 }
 
+/* Cult oldalhoz */
 @media screen and (max-width: 800px) {
     #cult-3-goddess-container {
         flex-direction: column;
