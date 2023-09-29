@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Love+Light&family=Noto+Music&family=Noto+Sans+Anatolian+Hieroglyphs&family=Rubik+Marker+Hatch&family=Train+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Love+Light&family=Quando&family=Noto+Music&family=Noto+Sans+Anatolian+Hieroglyphs&family=Rubik+Marker+Hatch&family=Train+One&display=swap");
 
 /* --- Reset --- */
 *,
@@ -34,6 +34,7 @@ html {
 
     --font-writing-style: "Love Light";
     --font-board-style: "Liu Jian Mao Cao";
+    --font-normal-style: "Quando";
 
     --dark-mode-text-color: hsl(0, 0%, 100%);
     --dark-mode-text-color-hover: hsl(0, 0%, 40%);
@@ -141,19 +142,37 @@ ul {
     text-align: center;
     text-wrap: balance;
     width: fit-content;
+
+    position: relative;
 }
 
 #nav-container li > a {
     color: var(--dark-mode-text-color);
-    font-size: clamp(0.2rem, 1vw + 0.5rem, 1rem);
+    font-size: clamp(0.2rem, 0.7vw + 0.4rem, 1rem);
+    font-family: var(--font-normal-style);
 
     padding: 0.3rem;
 
     transition: 250ms ease-in-out;
 }
 
-#nav-container a:hover {
-    color: var(--dark-mode-text-color-hover);
+#nav-container li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: var(--dark-mode-text-color);
+    visibility: hidden;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: 0.25s linear;
+}
+#nav-container li a:hover:before,
+#nav-container li a:focus:before {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
 #nav-icon-container {
@@ -243,82 +262,16 @@ main {
 #main-heading > button:hover {
     background-color: hsl(0, 0%, 4%);
 }
-/*
-#mt-background-container {
-    position: relative;
-    display: flex;
-    padding-block: 1rem;
-    scroll-behavior: smooth;
-    left: 0;
-    margin: 2rem;
-}
-
-#mt-background-container::before {
-    position: absolute;
-    top: 35%;
-    left: 0;
-    font-family: "Font Awesome 5 Free";
-    content: "\f060";
-    display: inline-block;
-    font-weight: 900;
-    font-size: 5rem;
-    color: hsla(0, 0%, 35%, 70%);
-    z-index: 1;
-    cursor: pointer;
-    transition: 200ms ease-in-out;
-}
-
-#mt-background-container::after {
-    position: absolute;
-    top: 35%;
-    right: 0;
-    font-family: "Font Awesome 5 Free";
-    content: "\f061";
-    display: inline-block;
-    font-weight: 900;
-    font-size: 5rem;
-    color: hsla(0, 0%, 35%, 70%);
-    z-index: 1;
-    cursor: pointer;
-    transition: 200ms ease-in-out;
-}
-
-#mt-background-container:hover::before,
-#mt-background-container:hover::after {
-    color: hsla(0, 0%, 60%, 90%);
-}
-
-#mt-background-container:hover::before {
-    translate: 10px;
-}
-
-#mt-background-container:hover::after {
-    translate: -10px;
-}
-
-#mt-background-container > a {
-    margin: 0 1rem;
-    display: flex;
-    left: 0;
-}
-
-#mt-background-container > a > img {
-    max-width: 10rem;
-    border-radius: 1.5rem;
-    transition: 300ms ease-in-out;
-}
-
-#mt-background-container > a > img:hover {
-    
-    scale: 1.1;
-}
-*/
 
 /* cult.html tartalomhoz */
 
 #cult-main {
     min-height: 100vh;
     height: 100%;
+}
+
+#cult-title {
+    font-weight: 400;
 }
 
 #cult-select {
@@ -345,6 +298,8 @@ main {
     justify-content: center;
     border-radius: 3rem;
 
+    opacity: 0;
+
     max-width: clamp(3rem, 5vw + 10rem, 20rem);
     transition: 500ms ease-in-out;
 }
@@ -361,7 +316,8 @@ main {
     margin: max(0.8vw, 0.6vw + 0.3rem);
 
     text-align: center;
-    text-wrap: balance;
+    /*text-wrap: balance;*/
+    text-wrap: nowrap;
 }
 
 .cult > p {
@@ -371,15 +327,21 @@ main {
     margin: max(0.8vw, 0.6vw + 0.3rem);
 
     text-align: center;
-    text-wrap: balance;
+    /*text-wrap: balance;*/
+    text-wrap: nowrap;
 }
 
 .cult > img {
-    width: 100%;
-    height: 100%;
+    /*width: 100%;
+    height: 100%;*/
+    width: min(
+        40vw,
+        30vw + 10rem
+    ); /* ez itt egy magic number, kéne rá egy normális min() */
+
     aspect-ratio: 1 / 1;
 
-    border-radius: 3rem;
+    border-radius: 15%;
 
     transition: 500ms ease-in-out;
 }
